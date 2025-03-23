@@ -1,0 +1,153 @@
+.minecraft-exporter {
+  background-color: #fafafa;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.minecraft-exporter h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.config-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.config-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.config-row label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.config-row input, 
+.config-row select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.config-row input:focus,
+.config-row select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+.config-row select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.custom-block-input {
+  margin-top: 10px;
+}
+
+.custom-block-input input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.input-hint {
+  color: #777;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.dimension-info {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.button-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.button-section button {
+  padding: 8px 15px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-section button:hover {
+  background-color: #3a80d2;
+}
+
+.button-section button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.commands-section {
+  margin-top: 15px;
+}
+
+.commands-section h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.commands-section pre {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  white-space: pre-wrap;
+}
+
+.pdf-link-section {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+.pdf-link-section a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #4a90e2;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.pdf-link-section a:hover {
+  background-color: #4a90e2;
+  color: white;
+  text-decoration: none;
+} 

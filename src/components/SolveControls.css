@@ -1,0 +1,91 @@
+.control-section {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.section-header {
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.section-header:hover {
+  background-color: #e5e5e5;
+}
+
+.section-content {
+  padding: 15px;
+}
+
+.control-row {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.control-row label {
+  width: 120px;
+  margin-right: 10px;
+}
+
+.algorithm-select {
+  width: 100%;
+}
+
+.checkbox-control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.checkbox-control input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #3a80d2;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* 保持Skip Animation按钮的黄色 */
+.button-row button:nth-child(2):not(:disabled) {
+  background-color: #ffc107;
+  border-color: #e0a800;
+  color: #212529;
+}
+
+.button-row button:nth-child(2):hover:not(:disabled) {
+  background-color: #e0a800;
+}
+
+.toggle-icon {
+  font-size: 12px;
+} 

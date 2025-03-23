@@ -1,0 +1,105 @@
+.maze-controls {
+  margin-bottom: 20px;
+}
+
+.control-section {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.section-header {
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.section-header:hover {
+  background-color: #e5e5e5;
+}
+
+.section-content {
+  padding: 15px;
+}
+
+.control-row {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-row {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkbox-row label {
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+.control-row label {
+  margin-bottom: 5px;
+}
+
+.control-row input[type="number"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.control-row input[type="range"] {
+  width: 100%;
+}
+
+.algorithm-select {
+  width: 100%;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button-row button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-row button:hover {
+  background-color: #3a80d2;
+}
+
+.button-row button:disabled {
+  background-color: #cccccc;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-row button:nth-child(2):not(:disabled) {
+  background-color: #ffc107;
+  border-color: #e0a800;
+  color: #212529;
+}
+
+.button-row button:nth-child(2):hover:not(:disabled) {
+  background-color: #e0a800;
+}
+
+.toggle-icon {
+  font-size: 12px;
+} 
