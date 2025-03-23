@@ -224,9 +224,9 @@ const MazeControls: React.FC<MazeControlsProps> = ({
               <input
                 id="animation-speed"
                 type="range"
-                min="5"
-                max="35"
-                step="2"
+                min="1"
+                max="20"
+                step="1"
                 value={animationSpeed}
                 onChange={(e) => onAnimationSpeedChange(parseInt(e.target.value, 10))}
               />

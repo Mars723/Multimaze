@@ -16,6 +16,7 @@
   background-color: #f5f5f5;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 
 .maze-view-controls label {
@@ -26,6 +27,20 @@
 .maze-view-controls input[type="range"] {
   flex: 1;
   max-width: 200px;
+}
+
+.reset-zoom-btn {
+  padding: 5px 10px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.reset-zoom-btn:hover {
+  background-color: #357ab8;
 }
 
 .maze-controls {
@@ -64,7 +79,7 @@
   margin: 20px 0;
   display: flex;
   justify-content: center;
-  touch-action: none; /* 防止触摸屏滚动 */
+  touch-action: auto; /* 允许默认触摸行为 */
 }
 
 .maze-grid {
@@ -73,13 +88,21 @@
   background-color: #f5f5f5;
   border: 1.7px solid #333; /* 使外围墙体与内部墙体保持一致的粗细 */
   user-select: none; /* 防止文本选择 */
+  transform-style: preserve-3d; /* 开启3D加速 */
+  will-change: transform; /* 提示浏览器对变换进行优化 */
+  backface-visibility: hidden; /* 减少重影 */
+  perspective: 1000; /* 3D加速 */
+  -webkit-font-smoothing: antialiased; /* 增强文本渲染 */
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate3d(0, 0, 0); /* 强制GPU加速 */
+  touch-action: none; /* 只在迷宫网格中阻止默认触摸行为 */
 }
 
 .maze-cell {
   position: relative;
   user-select: none;
   cursor: pointer;
-  touch-action: none;
+  touch-action: none; /* 只在单元格上阻止默认触摸行为 */
   min-width: 30px;
   min-height: 30px;
   background-color: white;
@@ -192,4 +215,11 @@
     min-width: 20px;
     min-height: 20px;
   }
+}
+
+/* 防止触摸时选择文本 - 移除全局触摸限制 */
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 } 
