@@ -607,7 +607,7 @@ export const Maze: React.FC<MazeProps> = ({
       />
       
       <div className="maze-view-controls">
-        <label htmlFor="cell-size">迷宫视图大小:</label>
+        <label htmlFor="cell-size">Maze View Size:</label>
         <input
           id="cell-size"
           type="range"
@@ -618,7 +618,7 @@ export const Maze: React.FC<MazeProps> = ({
           onChange={handleCellSizeChange}
         />
         <span>{cellSize}px</span>
-        <button className="reset-zoom-btn" onClick={resetZoomAndPan}>重置视图</button>
+        <button className="reset-zoom-btn" onClick={resetZoomAndPan}>Reset View</button>
       </div>
       
       <div className="maze-grid-container">
@@ -657,10 +657,10 @@ export const Maze: React.FC<MazeProps> = ({
       </div>
       
       <div className="maze-status">
-        {isGenerating && <p>正在生成迷宫... (步骤 {currentGenerationStep + 1}/{generationSteps.length})</p>}
-        {isSolving && <p>正在求解迷宫... (步骤 {currentSolvingStep + 1}/{solvingSteps.length})</p>}
-        {solved && !isGenerating && !isSolving && <p>恭喜！解迷时间: {solvingTime}秒</p>}
-        {!isGenerating && !isSolving && !solved && <p>点击起点开始解迷，自动寻找通往终点的路径</p>}
+        {isGenerating && <p>Generating maze... (Step {currentGenerationStep + 1}/{generationSteps.length})</p>}
+        {isSolving && <p>Solving maze... (Step {currentSolvingStep + 1}/{solvingSteps.length})</p>}
+        {solved && !isGenerating && !isSolving && <p>Congratulations! Solved in: {solvingTime} seconds</p>}
+        {!isGenerating && !isSolving && !solved && <p>Click the starting point to begin solving the maze, automatically find the path to the endpoint</p>}
       </div>
     </div>
   );
