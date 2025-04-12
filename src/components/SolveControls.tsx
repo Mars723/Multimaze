@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MazeSolvingAlgorithm } from '../types/maze';
 import './SolveControls.css';
 
-// 简单的自定义Select组件
+// Simple custom Select component
 interface SelectOption {
   value: any;
   label: string;
@@ -85,7 +85,7 @@ const SolveControls: React.FC<SolveControlsProps> = ({
     { value: MazeSolvingAlgorithm.BFS, label: 'Breadth-First Search' },
   ];
 
-  // 检查迷宫是否已完成生成
+  // Check if the maze generation is complete
   const isMazeGenerated = currentGenerationStep === generationStepsLength - 1;
   const canSolve = isMazeGenerated && !isGenerating && !isSolving;
 

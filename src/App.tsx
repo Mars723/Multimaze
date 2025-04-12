@@ -13,7 +13,7 @@ const App: React.FC = () => {
     <div className="app">
       <header className="app-header">
         <h1>MultiMaze</h1>
-        <p>探索不同的迷宫生成和求解算法</p>
+        <p>Explore Different Maze Generation and Solving Algorithms</p>
       </header>
 
       <main className="app-main">

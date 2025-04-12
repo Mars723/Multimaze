@@ -37,11 +37,11 @@ const MinecraftExporter: React.FC<MinecraftExporterProps> = ({ grid }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     
-    // 处理数值类型字段
+    // Handle block type field
     if (name === 'blockType') {
       if (value === 'custom') {
         setIsCustomBlock(true);
-        // 保持之前的方块类型不变，直到用户输入自定义值
+        // Keep previous block type unchanged until user inputs custom value
       } else {
         setIsCustomBlock(false);
         setConfig(prev => ({
@@ -50,15 +50,15 @@ const MinecraftExporter: React.FC<MinecraftExporterProps> = ({ grid }) => {
         }));
       }
     } else if (['offsetX', 'offsetY', 'z', 'scale', 'height'].includes(name)) {
-      // 处理数值类型字段
+      // Handle numeric fields
       if (value === '' || value === '-') {
-        // 允许空值和单独的负号作为中间状态
+        // Allow empty values and single negative sign as intermediate states
         setConfig(prev => ({
           ...prev,
           [name]: value
         }));
       } else {
-        // 转换为数字，但不自动转换为0
+        // Convert to number, but don't automatically convert to 0
         const parsedValue = parseInt(value, 10);
         setConfig(prev => ({
           ...prev,
@@ -66,7 +66,7 @@ const MinecraftExporter: React.FC<MinecraftExporterProps> = ({ grid }) => {
         }));
       }
     } else {
-      // 处理非数值类型字段
+      // Handle non-numeric fields
       setConfig(prev => ({
         ...prev,
         [name]: value
@@ -74,12 +74,12 @@ const MinecraftExporter: React.FC<MinecraftExporterProps> = ({ grid }) => {
     }
   };
 
-  // 处理自定义方块类型输入
+  // Handle custom block type input
   const handleCustomBlockChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setCustomBlockType(value);
     
-    // 当用户输入自定义方块类型时，实时更新config
+    // Update config in real-time when user inputs custom block type
     if (value.trim() !== '') {
       setConfig(prev => ({
         ...prev,
@@ -92,10 +92,10 @@ const MinecraftExporter: React.FC<MinecraftExporterProps> = ({ grid }) => {
   const generateCommands = () => {
     if (!grid || grid.length === 0) return;
     
-    // 确保所有必要的数值字段都有有效值
+    // Ensure all necessary numeric fields have valid values
     const validatedConfig: MinecraftExportConfig = {
       ...config,
-      // 将空字符串转换为默认值
+      // Convert empty strings to default values
       offsetX: typeof config.offsetX === 'string' && (config.offsetX === '' || config.offsetX === '-') ? 0 : Number(config.offsetX),
       offsetY: typeof config.offsetY === 'string' && (config.offsetY === '' || config.offsetY === '-') ? 0 : Number(config.offsetY),
       z: typeof config.z === 'string' && (config.z === '' || config.z === '-') ? 4 : Number(config.z),
@@ -127,36 +127,36 @@ const MinecraftExporter: React.FC<MinecraftExporterProps> = ({ grid }) => {
 
   // Block type options
   const blockOptions = [
-    // 石材系列
-    { id: 'stone', name: '石头' },
-    { id: 'cobblestone', name: '圆石' },
-    { id: 'stone_bricks', name: '石砖' },
-    { id: 'deepslate', name: '凝灰岩' },
-    { id: 'deepslate_bricks', name: '凝灰岩砖' },
-    { id: 'bricks', name: '红砖块' },
-    { id: 'sandstone', name: '沙石' },
-    { id: 'polished_blackstone_bricks', name: '黑石砖' },
+    // Stone series
+    { id: 'stone', name: 'Stone' },
+    { id: 'cobblestone', name: 'Cobblestone' },
+    { id: 'stone_bricks', name: 'Stone Bricks' },
+    { id: 'deepslate', name: 'Deepslate' },
+    { id: 'deepslate_bricks', name: 'Deepslate Bricks' },
+    { id: 'bricks', name: 'Bricks' },
+    { id: 'sandstone', name: 'Sandstone' },
+    { id: 'polished_blackstone_bricks', name: 'Polished Blackstone Bricks' },
     
-    // 下界和末地系列
-    { id: 'nether_bricks', name: '下界砖块' },
-    { id: 'red_nether_bricks', name: '红色下界砖' },
-    { id: 'end_stone_bricks', name: '末地石砖' },
-    { id: 'crying_obsidian', name: '哭泣的黑曜石' },
-    { id: 'purpur_block', name: '紫珀块' },
+    // Nether and End series
+    { id: 'nether_bricks', name: 'Nether Bricks' },
+    { id: 'red_nether_bricks', name: 'Red Nether Bricks' },
+    { id: 'end_stone_bricks', name: 'End Stone Bricks' },
+    { id: 'crying_obsidian', name: 'Crying Obsidian' },
+    { id: 'purpur_block', name: 'Purpur Block' },
     
-    // 木材系列
-    { id: 'oak_planks', name: '橡木木板' },
-    { id: 'dark_oak_planks', name: '深色橡木木板' },
+    // Wood series
+    { id: 'oak_planks', name: 'Oak Planks' },
+    { id: 'dark_oak_planks', name: 'Dark Oak Planks' },
     
-    // 装饰方块
-    { id: 'quartz_block', name: '石英块' },
-    { id: 'prismarine', name: '海晶石' },
-    { id: 'lapis_block', name: '青金石块' },
-    { id: 'glowstone', name: '荧石' },
-    { id: 'purple_concrete', name: '紫色混凝土' },
+    // Decorative blocks
+    { id: 'quartz_block', name: 'Quartz Block' },
+    { id: 'prismarine', name: 'Prismarine' },
+    { id: 'lapis_block', name: 'Lapis Block' },
+    { id: 'glowstone', name: 'Glowstone' },
+    { id: 'purple_concrete', name: 'Purple Concrete' },
     
-    // 添加自定义选项
-    { id: 'custom', name: '自定义方块' }
+    // Add custom option
+    { id: 'custom', name: 'Custom Block' }
   ];
 
   return (
@@ -240,12 +240,12 @@ const MinecraftExporter: React.FC<MinecraftExporterProps> = ({ grid }) => {
             <div className="custom-block-input">
               <input
                 type="text"
-                placeholder="输入自定义方块ID"
+                placeholder="Enter custom block ID"
                 value={customBlockType}
                 onChange={handleCustomBlockChange}
               />
               {customBlockType.trim() === '' && (
-                <div className="input-hint">请输入有效的Minecraft方块ID</div>
+                <div className="input-hint">Please enter a valid Minecraft block ID</div>
               )}
             </div>
           )}

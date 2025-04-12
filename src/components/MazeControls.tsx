@@ -4,7 +4,7 @@ import SolveControls from './SolveControls';
 import MinecraftExporter from './MinecraftExporter';
 import './MazeControls.css';
 
-// 简单的自定义Select组件
+// Simple custom Select component
 interface SelectOption {
   value: any;
   label: string;
