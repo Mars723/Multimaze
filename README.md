@@ -87,6 +87,3 @@ npm start
 - TypeScript
 - CSS Grid and Flexbox layout
 
-## License
-
-MIT
